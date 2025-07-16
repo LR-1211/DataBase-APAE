@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema APAE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>BANCO DE DADOS L.R</h1>
+
+  <!-- Abas -->
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="pacientes">Pacientes</button>
+    <button class="tab-btn" data-tab="familiares">Familiares</button>
+    <button class="tab-btn" data-tab="presenca">Presença</button>
+    <button class="tab-btn" data-tab="profissionais">Profissionais</button>
+  </div>
+
+  <!-- Conteúdo de cada aba -->
+  <div id="pacientes" class="tab-content active">
+    <h2>Pacientes</h2>
+    <div id="lista-pacientes"></div>
+    <form id="form-paciente">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="date" name="data_nascimento" required>
+        <input type="text" name="cpf" placeholder="CPF" required>
+        <input type="text" name="rg" placeholder="RG" required>
+        <input type="text" name="nome_responsavel" placeholder="Nome do Responsável" required>
+        <input type="text" name="telefone_responsavel" placeholder="Telefone do Responsável" required>
+        <input type="text" name="endereco" placeholder="Endereço" required>
+        <input type="text" name="tipo_deficiencia" placeholder="Tipo de Deficiência" required>
+        <input type="text" name="grau_deficiencia" placeholder="Grau de Deficiência" required>
+        <input type="date" name="data_cadastro" required>
+        <input type="number" name="status_ativo" placeholder="Status (1 ou 0)" required>
+        <button type="submit">Salvar</button>
+    </form>
+  </div>
+
+  <!-- FAMILIARES -->
+  <div id="familiares" class="tab-content">
+    <h2>Familiares</h2>
+    <div id="lista-familiares"></div>
+    <form id="form-familiar">
+      <input type="text" name="nome" placeholder="Nome" required>
+      <input type="text" name="parentesco" placeholder="Parentesco" required>
+      <input type="text" name="telefone" placeholder="Telefone" required>
+      <input type="number" name="id_paciente" placeholder="ID do Paciente" required>
+      <button type="submit">Salvar</button>
+    </form>
+  </div>
+  
+  <!-- PRESENÇA -->
+  <div id="presenca" class="tab-content">
+    <h2>Presença</h2>
+    <div id="lista-presenca"></div>
+    <form id="form-presenca">
+      <input type="number" name="id_paciente" placeholder="ID do Paciente" required>
+      <select name="vinda" required>
+        <option value="1">Veio</option>
+        <option value="0">Não Veio</option>
+      </select>
+      <input type="datetime-local" name="data_hora" required>
+      <textarea name="observacao" placeholder="Observação"></textarea>
+      <button type="submit">Salvar</button>
+    </form>
+  </div>
+  
+  <!-- PROFISSIONAIS -->
+  <div id="profissionais" class="tab-content">
+    <h2>Profissionais</h2>
+    <div id="lista-profissionais"></div>
+    <form id="form-profissional">
+      <input type="text" name="nome" placeholder="Nome" required>
+      <input type="text" name="cargo" placeholder="Cargo" required>
+      <input type="text" name="especialidade" placeholder="Especialidade" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="telefone" placeholder="Telefone" required>
+      <input type="date" name="data_admissao" required>
+      <button type="submit">Salvar</button>
+    </form>
+  </div>  
+
+  <script src="script.js"></script>
+</body>
+</html>
